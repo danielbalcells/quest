@@ -1,4 +1,4 @@
 check-style:
-	flake8 .
+	flake8 --exclude="migrations" .
 
 all: check-style
