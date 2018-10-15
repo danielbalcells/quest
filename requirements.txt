@@ -4,3 +4,4 @@ ipython==7.0.1
 psycopg2-binary==2.7.5
 pudb==2018.1
 flake8==3.5.0
+django-extensions==2.1.3
