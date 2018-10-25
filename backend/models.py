@@ -38,3 +38,6 @@ class QuestionLink(models.Model):
             f'source="{self.source}", '
             f'target="{self.target}")>'
         )
+
+    def __str__(self):
+        return f'"{self.source}" — "{self.target}"'
