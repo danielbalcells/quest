@@ -30,6 +30,7 @@ class QuestionLink(models.Model):
 
     class Meta:
         db_table = 'question_link'
+        unique_together = ('source', 'target')
 
     def __repr__(self):
         return (
@@ -41,3 +42,13 @@ class QuestionLink(models.Model):
 
     def __str__(self):
         return f'"{self.source}" — "{self.target}"'
+
+    @classmethod
+    def get_by_questions(cls, source, target):
+        """
+        Returns the QuestionLink between the given Questions
+        """
+        try:
+            return cls.objects.get(source=source, target=target)
+        except cls.DoesNotExist:
+            return None
