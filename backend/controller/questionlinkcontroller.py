@@ -1,5 +1,3 @@
-import logging
-
 from django.db import IntegrityError
 
 from backend import models
@@ -29,7 +27,7 @@ def delete_link(source, target):
     """
     Deletes the QuestionLink between two Questions.
     """
-    link = models.QuestionLink.get_by_questions( source=source, target=target)
+    link = models.QuestionLink.get_by_questions(source=source, target=target)
     link.delete()
 
 
@@ -39,3 +37,10 @@ def delete_symmetrical_link(source, target):
     """
     delete_link(source, target)
     delete_link(target, source)
+
+
+def get_by_source(source):
+    """
+    Gets all QuestionLink objects given a source Question
+    """
+    return models.QuestionLink.objects.filter(source=source)
