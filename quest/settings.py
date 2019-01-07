@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'quest.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'HOST': '',
+        'HOST': 'localhost',
         'NAME': 'quest',
         'USER': 'quest',
         'PASSWORD': 'quest',
